@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZarCode Demo</title>
+  <script src="zarcode.js"></script>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+  <h2>💡 Demo ZarCode v1.0 (Hybrid)</h2>
+  <textarea id="code" rows="8" cols="60">// tulis kode ZarCode di sini...</textarea>
+  <br><br>
+  <button id="run">Jalankan</button>
+  <pre id="output"></pre>
+
+  <script>
+    const btn = document.getElementById("run");
+    const codeBox = document.getElementById("code");
+    const output = document.getElementById("output");
+
+    btn.onclick = () => {
+      output.textContent = "";
+      console.clear();
+      const originalLog = console.log;
+      console.log = msg => output.textContent += msg + "\n";
+      runZar(codeBox.value);
+      console.log = originalLog;
+    };
+  </script>
+</body>
+</html>

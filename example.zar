@@ -1,0 +1,10 @@
+// Contoh skrip ZarCode Hybrid
+fungsi mulai() {
+  jk (true) {
+    tampil("Halo Dunia dari ZarCode 🚀");
+  } jt {
+    tampil("Kode tidak jalan!");
+  }
+}
+
+mulai();
